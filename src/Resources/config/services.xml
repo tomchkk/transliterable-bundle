@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="tomchkk_transliterable.transliterator.default"
+                 class="Tomchkk\TransliterableBundle\Service\Transliterator"
+                 public="true">
+        </service>
+
+        <service id="Tomchkk\TransliterableBundle\Service\Transliterator"
+                 alias="tomchkk_transliterable.transliterator.default"
+                 public="false" />
+
+        <service id="tomchkk_transliterable.transliterator"
+                 alias="tomchkk_transliterable.transliterator.default"
+                 public="false" />
+
+        <service id="tomchkk_transliterable.transliterable_reader"
+                 class="Tomchkk\TransliterableBundle\Service\TransliterableReader"
+                 public="false">
+            <argument key="$reader" type="service" id="annotations.reader" />
+        </service>
+
+        <service id="tomchkk_transliterable.transliterable_subscriber"
+                 class="Tomchkk\TransliterableBundle\EventSubscriber\TransliterableSubscriber"
+                 public="false">
+            <argument key="$transliterator" type="service" id="tomchkk_transliterable.transliterator" />
+            <argument key="$reader" type="service" id="tomchkk_transliterable.transliterable_reader" />
+            <tag name="doctrine.event_subscriber" lazy="true" />
+        </service>
+    </services>
+</container>
