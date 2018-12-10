@@ -2,8 +2,6 @@
 
 namespace Tomchkk\TransliterableBundle\Embeddable;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Transliterable
  *
