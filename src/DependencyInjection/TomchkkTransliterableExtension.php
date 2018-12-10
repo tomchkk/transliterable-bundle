@@ -8,6 +8,11 @@ use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
+/**
+ * TomchkkTransliterableExtension
+ *
+ * @author Tom Moore <tpm.moore@gmail.com>
+ */
 class TomchkkTransliterableExtension extends Extension implements PrependExtensionInterface
 {
     /**

@@ -5,6 +5,11 @@ namespace Tomchkk\TransliterableBundle\Tests\Service;
 use PHPUnit\Framework\TestCase;
 use Tomchkk\TransliterableBundle\Service\Transliterator;
 
+/**
+ * TransliteratorTest
+ *
+ * @author Tom Moore <tpm.moore@gmail.com>
+ */
 class TransliteratorTest extends TestCase
 {
     const DEFAULT_RULESET = 'Any-Latin';

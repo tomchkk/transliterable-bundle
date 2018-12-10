@@ -7,6 +7,8 @@ namespace Tomchkk\TransliterableBundle\Embeddable;
  *
  * An embeddable entity that enables an entity text field to simply be mapped
  * as a transliterable.
+ *
+ * @author Tom Moore <tpm.moore@gmail.com>
  */
 class Transliterable
 {

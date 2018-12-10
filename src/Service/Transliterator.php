@@ -7,6 +7,9 @@ use Tomchkk\TransliterableBundle\Service\TransliteratorInterface;
 /**
  * Transliterator
  *
+ * A Transliterator service that transliterates and manages transliterator
+ * instances for a default or other given transliteration ruleset.
+ *
  * @author Tom Moore <tpm.moore@gmail.com>
  */
 class Transliterator implements TransliteratorInterface

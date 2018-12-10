@@ -7,6 +7,11 @@ use PHPUnit\Framework\TestCase;
 use Tomchkk\TransliterableBundle\Annotation as Tomchkk;
 use Tomchkk\TransliterableBundle\Service\TransliterableReader;
 
+/**
+ * TransliterableReaderTest
+ *
+ * @author Tom Moore <tpm.moore@gmail.com>
+ */
 class TransliterableReaderTest extends TestCase
 {
     protected $reader;

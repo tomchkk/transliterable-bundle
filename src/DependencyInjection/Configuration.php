@@ -7,6 +7,11 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Tomchkk\TransliterableBundle\Service\Transliterator;
 use Tomchkk\TransliterableBundle\Service\TransliteratorInterface;
 
+/**
+ * Configuration
+ *
+ * @author Tom Moore <tpm.moore@gmail.com>
+ */
 class Configuration implements ConfigurationInterface
 {
     /**
