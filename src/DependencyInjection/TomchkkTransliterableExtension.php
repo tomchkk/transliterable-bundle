@@ -29,7 +29,7 @@ class TomchkkTransliterableExtension extends Extension implements PrependExtensi
                     ]
                 ]
             ]
-         ]);
+        ]);
     }
 
     /**
