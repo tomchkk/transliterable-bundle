@@ -47,9 +47,11 @@ class TomchkkTransliterableExtension extends Extension implements PrependExtensi
         $defaultManager->setArgument(0, $config['global_ruleset']);
 
         if (null !== $config['transliterator']) {
-            // use a custom transliterator manager
-            $container->setAlias('tomchkk_transliterable.transliterator', $config['transliterator']);
+            // use a custom transliterator
+            $container
+                ->setAlias('tomchkk_transliterable.transliterator', $config['transliterator'])
+                ->setPublic(true)
+            ;
         }
-
     }
 }
