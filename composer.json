@@ -20,7 +20,8 @@
         "symfony/property-access": "^4.2"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^4.2"
+        "symfony/phpunit-bridge": "^4.2",
+        "symfony/filesystem": "^4.2"
     },
     "autoload": {
         "psr-4": {
