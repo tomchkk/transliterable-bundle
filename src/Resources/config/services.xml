@@ -29,10 +29,16 @@
             <tag name="doctrine.event_subscriber" lazy="true" />
         </service>
 
+        <service id="tomchkk_transliterable.twig.transliterable_runtime"
+                 class="Tomchkk\TransliterableBundle\Twig\TransliterableRuntime"
+                 public="false" >
+            <argument key="$transliterator" type="service" id="tomchkk_transliterable.transliterator" />
+            <tag name="twig.runtime" lazy="true" />
+        </service>
+
         <service id="tomckk_transliterable.twig.transliterable_extension"
                  class="Tomchkk\TransliterableBundle\Twig\TransliterableExtension"
                  public="false">
-            <argument key="$transliterator" type="service" id="tomchkk_transliterable.transliterator" />
             <tag name="twig.extension" lazy="true" />
         </service>
     </services>
