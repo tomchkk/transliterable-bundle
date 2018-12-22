@@ -30,4 +30,45 @@ class TransliterableTest extends TestCase
 
         $this->assertNull($transliterable->getTransliteration());
     }
+
+    /**
+     * @dataProvider __toStringProvider
+     */
+    public function test__toString($transliterable, $expected)
+    {
+        $this->assertSame($expected, $transliterable->__toString());
+    }
+
+    public function __toStringProvider()
+    {
+        return array(
+            'original and transliteration are null' => array(
+                $this->getTransliterable(), '()'
+            ),
+            'only original is null' => array(
+                $this->getTransliterable(null, 'Ilya'), '(Ilya)'
+            ),
+            'only transliteration is null' => array(
+                $this->getTransliterable('Илья'), 'Илья ()'
+            ),
+            'neither original nor transliteration are null' => array(
+                $this->getTransliterable('Илья', 'Ilya'), 'Илья (Ilya)'
+            ),
+        );
+    }
+
+    private function getTransliterable($original = null, $transliteration = null)
+    {
+        $transliterable = new Transliterable();
+
+        if ($original) {
+            $transliterable->setOriginal($original);
+        }
+
+        if ($transliteration) {
+            $transliterable->setTransliteration($transliteration);
+        }
+
+        return $transliterable;
+    }
 }

@@ -75,4 +75,16 @@ class Transliterable
 
         return $this;
     }
+
+    /**
+     * __toString
+     *
+     * Returns a conveniently formatted version of a Transliterable.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return \trim(sprintf('%s (%s)', $this->original, $this->transliteration));
+    }
 }
