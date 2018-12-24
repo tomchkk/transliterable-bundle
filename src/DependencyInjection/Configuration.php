@@ -25,12 +25,12 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('global_ruleset')
-                    ->info('The transliterator ruleset that should be used in all cases where a specific one is not set on a class or class property.')
+                    ->info('The default ruleset, required by the PHP Transliterator, in all cases where a specific ruleset is not set at class- or property-level.')
                     ->defaultValue(Transliterator::DEFAULT_RULESET)
                 ->end()
                 ->scalarNode('transliterator')
                     ->info(sprintf(
-                        'By default TransliterableBundle uses PHP\'s built-in \Transliterator class, decorated with a simple caching mechanism, to perform transliterations. The default transliterator can be overridden by a custom service implementing %s.',
+                        'By default TransliterableBundle uses PHP\'s built-in Transliterator class - decorated with a simple caching mechanism - to perform transliterations. The default transliterator can be overridden by a custom service implementing %s.',
                         TransliteratorInterface::class
                     ))
                     ->defaultNull()
