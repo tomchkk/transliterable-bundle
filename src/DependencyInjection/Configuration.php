@@ -30,7 +30,7 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->scalarNode('transliterator')
                     ->info(sprintf(
-                        'By default TransliterableBundle uses PHP\'s built-in Transliterator class - decorated with a simple caching mechanism - to perform transliterations. The default transliterator can be overridden by a custom service implementing %s.',
+                        'By default TransliterableBundle uses PHP\'s built-in Transliterator class - decorated with a simple caching mechanism - as the transliteration engine. The default transliterator can be overridden by a custom service implementing %s.',
                         TransliteratorInterface::class
                     ))
                     ->defaultNull()
