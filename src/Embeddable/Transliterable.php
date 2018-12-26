@@ -36,7 +36,8 @@ class Transliterable
     /**
      * Set the value of original
      *
-     * Setting a new original value also clears any transliteration.
+     * Setting a new original value also clears any existing transliteration
+     * value.
      *
      * @param string $original
      *
