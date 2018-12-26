@@ -112,7 +112,7 @@ class TransliterableSubscriber extends AbstractDoctrineEventSubscriber
     private function getTransliterableFields(ClassMetadata $classMetadata): array
     {
         $transliterableFields = [];
-        foreach($classMetadata->embeddedClasses as $fieldName => $fieldMeta) {
+        foreach ($classMetadata->embeddedClasses as $fieldName => $fieldMeta) {
             if ($fieldMeta['class'] === Transliterable::class) {
                 $transliterableFields[] = $fieldName;
             }
