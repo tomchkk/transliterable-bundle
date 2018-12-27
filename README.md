@@ -147,13 +147,13 @@ In the above example, `$firstname` would be transliterated according by the clas
 
 **Form Type**
 
-A `TransliterableType` form type is included, providing an `original` and `transliteration` field - each extending the built-in `TextType`. By default, the `required` option of the `transliteration` field is set to `false`, since this field, if empty, will be populated when the entity is persisted.
+A `TransliterableType` form type is included, providing an `original` and `transliteration` field - each extending the built-in [TextType](https://symfony.com/doc/current/reference/forms/types/text.html). By default, the `required` option of the `transliteration` field is set to `false` since this field, if empty, will be populated when the entity is persisted.
 
-The following configuration options are available:
+The following configuration options are available for `TransliterableType`:
 
 |          Option           |  Type   | Default |                                    Use                                     |
 |---------------------------|---------|---------|----------------------------------------------------------------------------|
-| `exclude_transliteration` | boolean |  false  |       Whether or not to include a transliteration field in the form        |
+| `exclude_transliteration` | boolean |  false  |      Whether or not to exclude the transliteration field in the form       |
 |         `options`         |  array  | [empty] | Standard `TextType` options applicable to both `TransliterableType` fields |
 |    `original_options`     |  array  | [empty] |    Standard `TextType` options applicable to just the `original` field     |
 | `transliteration_options` |  array  | [empty] | Standard `TextType` options applicable to just the `transliteration` field |
