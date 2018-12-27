@@ -42,7 +42,7 @@ Usage
 
 ### Embeddable Entity
 
-An entity field can be made _transliterable_ by including a Doctrine `Embedded` annotation, with a _class_ value of the fully-qualified `Transliterable` class name.
+An entity field can be made _transliterable_ by including a Doctrine `Embedded` annotation with a _class_ value of the fully-qualified `Transliterable` class name.
 
 ```php
 // src/Entity/Person.php
@@ -61,7 +61,7 @@ class Person
 }
 ```
 
-For the same reasons indicated in the documentation for Doctrine Embeddables, `Transliterable` [fields should be initialized](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/embeddables.html#initializing-embeddables) as such, to guarantee returning an embedded `Transliterable` instance - e.g.:
+For the same reasons indicated in the documentation for Doctrine Embeddables, `Transliterable` [fields should be initialized](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/embeddables.html#initializing-embeddables) to guarantee returning an embedded `Transliterable` instance - e.g.:
 
 ```php
 // src/Entity/Person.php
@@ -99,7 +99,7 @@ tomchkk_transliterable:
 
 ### Rulesets
 
-In order to perform a transliteration, the transliterator requires a _ruleset_ identifier, which is used to create a particular transliterator instance. [More on ruleset identifiers](http://userguide.icu-project.org/transforms/general#TOC-Transliterator-Identifiers).
+In order to perform a transliteration the transliterator requires a _ruleset_ identifier, which is used to create a particular transliterator instance. [More on ruleset identifiers](http://userguide.icu-project.org/transforms/general#TOC-Transliterator-Identifiers).
 
 **Global ruleset**
 
@@ -140,14 +140,14 @@ class Person
     private $lastname;
 ```
 
-In the above example, `$firstname` would be transliterated according by the class ruleset; `$lastname` by the property ruleset.
+In the above example `$firstname` would be transliterated according by the class ruleset; `$lastname` by the property ruleset.
 
 
 ### Frontend
 
 **Form Type**
 
-A `TransliterableType` form type is included, providing an `original` and `transliteration` field - each extending the built-in [TextType](https://symfony.com/doc/current/reference/forms/types/text.html). By default, the `required` option of the `transliteration` field is set to `false` since this field, if empty, will be populated when the entity is persisted.
+A `TransliterableType` form type is included, providing an `original` and `transliteration` field - each extending Symfony's [TextType](https://symfony.com/doc/current/reference/forms/types/text.html). By default the `required` option of the `transliteration` field is set to `false` since this field, if empty, will be populated when the entity is persisted.
 
 The following configuration options are available for `TransliterableType`:
 
@@ -158,17 +158,18 @@ The following configuration options are available for `TransliterableType`:
 |    `original_options`     |  array  | [empty] |    Standard `TextType` options applicable to just the `original` field     |
 | `transliteration_options` |  array  | [empty] | Standard `TextType` options applicable to just the `transliteration` field |
 
-
-A `Transliterable` entity field without a transliteration value will be transliterated when the entity is first persisted, or when updated.
-
 **Twig Extension**
 
-The `transliterate` twig filter, with optional _ruleset_ argument - enables direct transliteration of strings - e.g.:
+The `transliterate` twig filter enables direct transliteration of strings within twig templates - e.g.:
 
 ```twig
 Firstname: {{ 'Илья'|transliterate }}
 <!-- Firstname: Ilʹâ -->
+```
 
+The optional _ruleset_ argument can be used per transliteration, otherwise the Transliterator service's `global_ruleset` will be used:
+
+```twig
 Firstname: {{ 'Илья'|transliterate('Russian-Latin/BGN') }}
 <!-- Firstname: Ilʹya -->
 ```
