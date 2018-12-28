@@ -34,5 +34,8 @@
         "psr-4": {
             "Tomchkk\\TransliterableBundle\\Tests\\": "src/Tests/"
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
