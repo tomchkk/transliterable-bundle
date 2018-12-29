@@ -1,3 +1,9 @@
+[![GitHub Release](https://img.shields.io/github/release/tomchkk/transliterable-bundle.svg)](https://github.com/tomchkk/transliterable-bundle/releases)
+[![Travis](https://img.shields.io/travis/tomchkk/transliterable-bundle.svg)](https://travis-ci.org/tomchkk/transliterable-bundle)
+[![Total Downloads](https://img.shields.io/packagist/dt/tomchkk/transliterable-bundle.svg)](https://packagist.org/packages/tomchkk/transliterable-bundle)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
+
+
 TransliterableBundle
 ====================
 
